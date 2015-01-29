@@ -1,23 +1,39 @@
-﻿生成启动时间为 1/29/2015 5:28:53 PM。
+﻿生成启动时间为 1/29/2015 5:48:53 PM。
      1>项目“G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\Tetris.vcxproj”在节点 4 上(build 个目标)。
      1>InitializeBuildStatus:
          正在创建“Debug.win32\Tetris.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
        ClCompile:
          E:\vs\VC\bin\CL.exe /c /I"G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\..\..\..\cocos2dx" /I"G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\..\..\..\cocos2dx\include" /I"G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\..\..\..\cocos2dx\kazmath\include" /I"G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\..\..\..\cocos2dx\platform\win32" /I"G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\..\..\..\cocos2dx\platform\third_party\win32" /I"G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\..\..\..\cocos2dx\platform\third_party\win32\OGLES" /I"G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\..\..\..\external" /I"G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\..\..\..\external\chipmunk\include\chipmunk" /I"G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\..\..\..\CocosDenshion\include" /I"G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\..\..\..\extensions" /I..\Classes /I.. /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _USE_MATH_DEFINES /D GL_GLEXT_PROTOTYPES /D CC_ENABLE_CHIPMUNK_INTEGRATION=1 /D COCOS2D_DEBUG=1 /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc100.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\Classes\HelloWorldScene.cpp
          HelloWorldScene.cpp
-     1>g:\cocos\cocos2d-x-2.2.3\projects\tetris\classes\helloworldscene.cpp(86): error C2065: “GifBase”: 未声明的标识符
-     1>g:\cocos\cocos2d-x-2.2.3\projects\tetris\classes\helloworldscene.cpp(86): error C2065: “gif”: 未声明的标识符
-     1>g:\cocos\cocos2d-x-2.2.3\projects\tetris\classes\helloworldscene.cpp(86): error C2653: “InstantGif”: 不是类或命名空间名称
-     1>g:\cocos\cocos2d-x-2.2.3\projects\tetris\classes\helloworldscene.cpp(86): error C2660: “HelloWorld::create”: 函数不接受 1 个参数
-     1>g:\cocos\cocos2d-x-2.2.3\projects\tetris\classes\helloworldscene.cpp(87): error C2065: “gif”: 未声明的标识符
-     1>g:\cocos\cocos2d-x-2.2.3\projects\tetris\classes\helloworldscene.cpp(87): error C2227: “->setAnchorPoint”的左边必须指向类/结构/联合/泛型类型
-                 类型是“'unknown-type'”
-     1>g:\cocos\cocos2d-x-2.2.3\projects\tetris\classes\helloworldscene.cpp(88): error C2065: “gif”: 未声明的标识符
-     1>g:\cocos\cocos2d-x-2.2.3\projects\tetris\classes\helloworldscene.cpp(88): error C2227: “->setPosition”的左边必须指向类/结构/联合/泛型类型
-                 类型是“'unknown-type'”
-     1>g:\cocos\cocos2d-x-2.2.3\projects\tetris\classes\helloworldscene.cpp(89): error C2065: “gif”: 未声明的标识符
-     1>已完成生成项目“G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\Tetris.vcxproj”(build 个目标)的操作 - 失败。
+       ManifestResourceCompile:
+         所有输出均为最新。
+       PreLinkEvent:
+         if not exist "G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\Debug.win32\" mkdir "G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\Debug.win32\"
+         xcopy /Y /Q "G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\..\..\..\external\libwebsockets\win32\lib\*.*" "G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\Debug.win32\"
+         :VCEnd
+         复制了 2 个文件
+       Link:
+         E:\vs\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\Debug.win32\Tetris.exe" /INCREMENTAL /NOLOGO /LIBPATH:"G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\Debug.win32\\" libExtensions.lib libcocos2d.lib libCocosDenshion.lib opengl32.lib glew32.lib libBox2d.lib libchipmunk.lib libcurl_imp.lib pthreadVCE2.lib websockets.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug.win32\Tetris.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\Debug.win32\Tetris.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\Debug.win32\Tetris.lib" /MACHINE:X86 Debug.win32\Tetris.exe.embed.manifest.res
+         Debug.win32\AppDelegate.obj
+         Debug.win32\HelloWorldScene.obj
+         Debug.win32\main.obj
+         Debug.win32\Tetris.obj
+         "G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\Debug.win32\libcocos2d.lib"
+         "G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\Debug.win32\libCocosDenshion.lib"
+         "G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\Debug.win32\libExtensions.lib"
+         "G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\Debug.win32\libBox2D.lib"
+         "G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\Debug.win32\libchipmunk.lib"
+       Manifest:
+         c:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug.win32\Tetris.exe.embed.manifest" /manifest Debug.win32\Tetris.exe.intermediate.manifest
+         所有输出均为最新。
+       LinkEmbedManifest:
+         所有输出均为最新。
+         Tetris.vcxproj -> G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\Debug.win32\Tetris.exe
+       FinalizeBuildStatus:
+         正在删除文件“Debug.win32\Tetris.unsuccessfulbuild”。
+         正在对“Debug.win32\Tetris.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\Tetris.vcxproj”(build 个目标)的操作。
 
-生成失败。
+生成成功。
 
-已用时间 00:00:04.78
+已用时间 00:00:05.56
