@@ -17,5 +17,6 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
     CCEGLView* eglView = CCEGLView::sharedOpenGLView();
     eglView->setViewName("Tetris");
     eglView->setFrameSize(800, 600);
+	eglView->setFrameZoomFactor(1.0f);
     return CCApplication::sharedApplication()->run();
 }

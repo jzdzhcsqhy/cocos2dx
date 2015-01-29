@@ -1,5 +1,6 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
+#include "Tetris.h"
 
 USING_NS_CC;
 
@@ -26,7 +27,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // create a scene. it's an autorelease object
     CCScene *pScene = HelloWorld::scene();
-
+	//CCScene* pScene = CMainFrame::scene();
     // run
     pDirector->runWithScene(pScene);
 

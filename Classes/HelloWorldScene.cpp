@@ -1,5 +1,8 @@
 #include "HelloWorldScene.h"
+#include "Tetris.h"
+#include "cocos-ext.h"
 
+using namespace	cocos2d::extension;
 USING_NS_CC;
 
 CCScene* HelloWorld::scene()
@@ -65,26 +68,40 @@ bool HelloWorld::init()
     this->addChild(pLabel, 1);
 
     // add "HelloWorld" splash screen"
-    CCSprite* pSprite = CCSprite::create("HelloWorld.png");
-
-    // position the sprite on the center of the screen
-    pSprite->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-
+    //CCSprite* pSprite = CCSprite::create("HelloWorld.png");
+	//CCSprite* background = CCSprite::create("source\\scene\\CHANGANS.jpg");
+	CCSprite* background = CCSprite::create("scene\\dt.jpg");
+	// position the sprite on the center of the screen
+    background->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
     // add the sprite as a child to this layer
-    this->addChild(pSprite, 0);
+    this->addChild(background, 0);
     
+// 	CCSprite* tiger = CCSprite::create("hutouzuo.gif");
+// 	tiger->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+// 	this->addChild(tiger);
+
+
+
+
     return true;
 }
 
 
 void HelloWorld::menuCloseCallback(CCObject* pSender)
 {
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT) || (CC_TARGET_PLATFORM == CC_PLATFORM_WP8)
-	CCMessageBox("You pressed the close button. Windows Store Apps do not implement a close button.","Alert");
-#else
-    CCDirector::sharedDirector()->end();
-#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
-    exit(0);
-#endif
-#endif
+// #if (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT) || (CC_TARGET_PLATFORM == CC_PLATFORM_WP8)
+// 	CCMessageBox("You pressed the close button. Windows Store Apps do not implement a close button.","Alert");
+// #else
+//     CCDirector::sharedDirector()->end();
+// #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+//     exit(0);
+// #endif
+// #endif
+
+	CCScene* pScene = CMainFrame::scene();
+	
+	//CCDirector::sharedDirector()->replaceScene(pScene);
+	CCDirector::sharedDirector()->replaceScene(
+			CCTransitionSlideInT::create(0.5f,pScene)
+		);
 }

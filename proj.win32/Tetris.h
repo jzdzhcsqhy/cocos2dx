@@ -1,14 +1,16 @@
 #ifndef __TETRIS_H__
-#endif	__TETRIS_H__
+#define	__TETRIS_H__
 
 #include "cocos2d.h"
+
+using namespace cocos2d;
 
 class CMainFrame : public cocos2d::CCLayer
 {
 public:
 	virtual bool init();
 
-	static cocos2d::CCScene* scene();
+	static CCScene* scene();
 
 	CREATE_FUNC(CMainFrame);
 };
