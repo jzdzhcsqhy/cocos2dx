@@ -1,4 +1,4 @@
-﻿生成启动时间为 1/29/2015 5:48:53 PM。
+﻿生成启动时间为 2/2/2015 3:00:06 PM。
      1>项目“G:\cocos\cocos2d-x-2.2.3\projects\Tetris\proj.win32\Tetris.vcxproj”在节点 4 上(build 个目标)。
      1>InitializeBuildStatus:
          正在创建“Debug.win32\Tetris.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
@@ -36,4 +36,4 @@
 
 生成成功。
 
-已用时间 00:00:05.56
+已用时间 00:00:06.81

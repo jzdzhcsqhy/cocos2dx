@@ -2,7 +2,9 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
+#include "cocos-ext.h"
 
+using namespace	cocos2d::extension;
 class HelloWorld : public cocos2d::CCLayer
 {
 public:
@@ -14,7 +16,7 @@ public:
     
     // a selector callback
     void menuCloseCallback(CCObject* pSender);
-    
+    void touchDown(CCObject* pSender, CCControlEvent event );
     // implement the "static node()" method manually
     CREATE_FUNC(HelloWorld);
 };

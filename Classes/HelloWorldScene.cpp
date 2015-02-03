@@ -1,8 +1,6 @@
 #include "HelloWorldScene.h"
 #include "Tetris.h"
-#include "cocos-ext.h"
 
-using namespace	cocos2d::extension;
 USING_NS_CC;
 
 CCScene* HelloWorld::scene()
@@ -33,47 +31,59 @@ bool HelloWorld::init()
     CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
     CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
 
-    /////////////////////////////
-    // 2. add a menu item with "X" image, which is clicked to quit the program
-    //    you may modify it.
-
-    // add a "close" icon to exit the progress. it's an autorelease object
-    CCMenuItemImage *pCloseItem = CCMenuItemImage::create(
-                                        "CloseNormal.png",
-                                        "CloseSelected.png",
-                                        this,
-                                        menu_selector(HelloWorld::menuCloseCallback));
     
-	pCloseItem->setPosition(ccp(origin.x + visibleSize.width - pCloseItem->getContentSize().width/2 ,
-                                origin.y + pCloseItem->getContentSize().height/2));
-
-    // create menu, it's an autorelease object
-    CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
-    pMenu->setPosition(CCPointZero);
-    this->addChild(pMenu, 1);
-
-    /////////////////////////////
-    // 3. add your codes below...
-
-    // add a label shows "Hello World"
-    // create and initialize a label
-
-    // add "HelloWorld" splash screen"
-    //CCSprite* pSprite = CCSprite::create("HelloWorld.png");
 	//CCSprite* background = CCSprite::create("source\\scene\\CHANGANS.jpg");
 	CCSprite* background = CCSprite::create("scene\\dt.jpg");
 	// position the sprite on the center of the screen
-    background->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-    // add the sprite as a child to this layer
-    this->addChild(background, 0);
-    
+	background->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
+	// add the sprite as a child to this layer
+	this->addChild(background, 0);
+	    
 	CCSprite* tiger = CCSprite::create("0034-431506b-00000.png");
 	tiger->setPosition(ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
 	this->addChild(tiger);
 
+	CCScale9Sprite* btDown = CCScale9Sprite::create("CloseNormal.png");
 
+	CCScale9Sprite* btUp = CCScale9Sprite::create("CloseSelected.png");
+	CCLabelTTF* text = CCLabelTTF::create("Click","Show",30);
+	CCControlButton* bt = CCControlButton::create(text, btDown);
+	bt->setBackgroundSpriteForState(btDown,CCControlStateSelected);
+	bt->setPosition(ccp(50,50));
+	
+	bt->addTargetWithActionForControlEvents(this,
+											cccontrol_selector(HelloWorld::touchDown),
+											CCControlEventTouchDown
+											);
+	
+	this->addChild(bt);
 
+	CCMoveTo* moveto = CCMoveTo::create(5.0f, ccp(50,50));	
+//	tiger->runAction(moveto);
 
+	CCJumpBy* jmpb = CCJumpBy::create(1.0f,ccp(0,0), 100, 1);
+
+// 	CCRepeatForever* rpf = CCRepeatForever::create(jmpb);
+// 
+// 	tiger->runAction(rpf);
+
+// 	ccBezierConfig bezier;
+// 	bezier.controlPoint_1=ccp(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y);
+// 	bezier.controlPoint_2=ccp(350,150);
+// 	bezier.endPosition=ccp(50,50);
+// 
+// 	CCBezierTo* bz = CCBezierTo::create(5.0f, bezier);
+// 	tiger->runAction(bz);
+
+	CCScaleTo* tobig = CCScaleTo::create(5.0f, 2.0f, 1.5f);
+//	tiger->runAction(tobig);
+
+ 	CCBlink* blink = CCBlink::create(5.0f,3);
+// 	tiger->runAction(blink);
+//	CCAction* actionss = CCSpawn::create(moveto, jmpb, tobig, blink, NULL);
+	CCAction* actionss = CCSequence::create(moveto, jmpb, tobig, blink, NULL);
+	tiger->runAction(actionss);
+	this->scheduleUpdate();
     return true;
 }
 
@@ -95,4 +105,9 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 	CCDirector::sharedDirector()->replaceScene(
 			CCTransitionSlideInT::create(0.5f,pScene)
 		);
+}
+
+void HelloWorld::touchDown(CCObject* pSender, CCControlEvent event )
+{
+	
 }
